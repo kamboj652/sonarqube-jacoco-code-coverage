@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java-library'
     id 'jacoco'
     id 'org.sonarqube' version '3.3'
     id 'com.avast.gradle.docker-compose' version '0.14.3'
@@ -8,8 +8,13 @@ plugins {
 group 'com.tom'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-targetCompatibility = 11
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 
 repositories {
     mavenCentral()
